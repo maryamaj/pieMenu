@@ -11,12 +11,18 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize pieController = _pieController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.pieController = [[pieMenuViewController alloc] initWithSlices:6];
+    
+    [self.window addSubview:self.pieController.view];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

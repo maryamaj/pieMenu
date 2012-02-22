@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "pieMenuViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    pieMenuViewController* _pieController;
+    
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) pieMenuViewController* pieController;
 
 @end
