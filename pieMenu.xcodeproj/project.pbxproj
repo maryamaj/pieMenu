@@ -7,25 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A567AA614F4F8D900BD2E45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */; };
+		8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */; };
+		8A567AB014F5404900BD2E45 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8AA24C9A14ED072700D7725C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9914ED072700D7725C /* UIKit.framework */; };
 		8AA24C9C14ED072700D7725C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9B14ED072700D7725C /* Foundation.framework */; };
 		8AA24C9E14ED072700D7725C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9D14ED072700D7725C /* CoreGraphics.framework */; };
 		8AA24CA414ED072700D7725C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AA24CA214ED072700D7725C /* InfoPlist.strings */; };
 		8AA24CA614ED072700D7725C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CA514ED072700D7725C /* main.m */; };
 		8AA24CAA14ED072700D7725C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CA914ED072700D7725C /* AppDelegate.m */; };
+		8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CB114ED079800D7725C /* pieMenuView.m */; };
+		8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABC211214EE87E900CF5CFB /* pieSliceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8A567AAB14F53CA300BD2E45 /* pieMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieMenuViewController.h; sourceTree = "<group>"; };
+		8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuViewController.m; sourceTree = "<group>"; };
+		8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		8AA24C9514ED072700D7725C /* pieMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pieMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA24C9914ED072700D7725C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8AA24C9B14ED072700D7725C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AA24C9D14ED072700D7725C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8AA24CA114ED072700D7725C /* pieMenu-Info.plist */ = {isa = PBXFileReference; path = "pieMenu-Info.plist"; sourceTree = "<group>"; };
+		8AA24CA114ED072700D7725C /* pieMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pieMenu-Info.plist"; sourceTree = "<group>"; };
 		8AA24CA314ED072700D7725C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8AA24CA514ED072700D7725C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8AA24CA714ED072700D7725C /* pieMenu-Prefix.pch */ = {isa = PBXFileReference; path = "pieMenu-Prefix.pch"; sourceTree = "<group>"; };
-		8AA24CA814ED072700D7725C /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		8AA24CA714ED072700D7725C /* pieMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pieMenu-Prefix.pch"; sourceTree = "<group>"; };
+		8AA24CA814ED072700D7725C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AA24CA914ED072700D7725C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8AA24CB014ED079800D7725C /* pieMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieMenuView.h; sourceTree = "<group>"; };
+		8AA24CB114ED079800D7725C /* pieMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuView.m; sourceTree = "<group>"; };
+		8ABC211114EE87E900CF5CFB /* pieSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieSliceView.h; sourceTree = "<group>"; };
+		8ABC211214EE87E900CF5CFB /* pieSliceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieSliceView.m; sourceTree = "<group>"; };
+		8ABC211514EE8CC100CF5CFB /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A567AA614F4F8D900BD2E45 /* QuartzCore.framework in Frameworks */,
 				8AA24C9A14ED072700D7725C /* UIKit.framework in Frameworks */,
 				8AA24C9C14ED072700D7725C /* Foundation.framework in Frameworks */,
 				8AA24C9E14ED072700D7725C /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +78,7 @@
 		8AA24C9814ED072700D7725C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */,
 				8AA24C9914ED072700D7725C /* UIKit.framework */,
 				8AA24C9B14ED072700D7725C /* Foundation.framework */,
 				8AA24C9D14ED072700D7725C /* CoreGraphics.framework */,
@@ -74,6 +91,15 @@
 			children = (
 				8AA24CA814ED072700D7725C /* AppDelegate.h */,
 				8AA24CA914ED072700D7725C /* AppDelegate.m */,
+				8A567AAB14F53CA300BD2E45 /* pieMenuViewController.h */,
+				8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */,
+				8AA24CB014ED079800D7725C /* pieMenuView.h */,
+				8AA24CB114ED079800D7725C /* pieMenuView.m */,
+				8ABC211114EE87E900CF5CFB /* pieSliceView.h */,
+				8ABC211214EE87E900CF5CFB /* pieSliceView.m */,
+				8ABC211514EE8CC100CF5CFB /* utils.h */,
+				8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */,
+				8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */,
 				8AA24CA014ED072700D7725C /* Supporting Files */,
 			);
 			path = pieMenu;
@@ -154,6 +180,10 @@
 			files = (
 				8AA24CA614ED072700D7725C /* main.m in Sources */,
 				8AA24CAA14ED072700D7725C /* AppDelegate.m in Sources */,
+				8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */,
+				8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */,
+				8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */,
+				8A567AB014F5404900BD2E45 /* GCDAsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +289,7 @@
 				8AA24CAF14ED072700D7725C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
