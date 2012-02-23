@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.m
 //  pieMenu
@@ -12,6 +13,7 @@
 
 @synthesize window = _window;
 @synthesize pieController = _pieController;
+@synthesize surfaceComController = _surfaceComController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,6 +22,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.pieController = [[pieMenuViewController alloc] initWithSlices:6];
+    self.surfaceComController = [MSSCommunicationController sharedController];
+    [_surfaceComController connectToHost:@"129.16.213.195" onPort:4568];
+    [_surfaceComController handshake];
     
     [self.window addSubview:self.pieController.view];
     

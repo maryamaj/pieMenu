@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A2593EB14F6811800A3D43A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9B14ED072700D7725C /* Foundation.framework */; };
+		8A2593F114F6811800A3D43A /* MSSCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2593F014F6811800A3D43A /* MSSCommunicationController.m */; };
+		8A2593F514F6826500A3D43A /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8A2593F614F6827500A3D43A /* libMSSCommunicationController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2593EA14F6811800A3D43A /* libMSSCommunicationController.a */; };
+		8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A2593FD14F6850500A3D43A /* CodeineStructs.h */; };
 		8A567AA614F4F8D900BD2E45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */; };
 		8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */; };
-		8A567AB014F5404900BD2E45 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8AA24C9A14ED072700D7725C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9914ED072700D7725C /* UIKit.framework */; };
 		8AA24C9C14ED072700D7725C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9B14ED072700D7725C /* Foundation.framework */; };
 		8AA24C9E14ED072700D7725C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9D14ED072700D7725C /* CoreGraphics.framework */; };
@@ -21,11 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A2593EA14F6811800A3D43A /* libMSSCommunicationController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSSCommunicationController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2593EE14F6811800A3D43A /* MSSCommunicationController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSSCommunicationController-Prefix.pch"; sourceTree = "<group>"; };
+		8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSCommunicationController.h; sourceTree = "<group>"; };
+		8A2593F014F6811800A3D43A /* MSSCommunicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSCommunicationController.m; sourceTree = "<group>"; };
+		8A2593FD14F6850500A3D43A /* CodeineStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeineStructs.h; sourceTree = "<group>"; };
 		8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A567AAB14F53CA300BD2E45 /* pieMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieMenuViewController.h; sourceTree = "<group>"; };
 		8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuViewController.m; sourceTree = "<group>"; };
-		8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = ../pieMenu/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = ../pieMenu/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		8AA24C9514ED072700D7725C /* pieMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pieMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA24C9914ED072700D7725C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8AA24C9B14ED072700D7725C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,10 +53,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A2593E714F6811800A3D43A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2593EB14F6811800A3D43A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA24C9214ED072700D7725C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2593F614F6827500A3D43A /* libMSSCommunicationController.a in Frameworks */,
 				8A567AA614F4F8D900BD2E45 /* QuartzCore.framework in Frameworks */,
 				8AA24C9A14ED072700D7725C /* UIKit.framework in Frameworks */,
 				8AA24C9C14ED072700D7725C /* Foundation.framework in Frameworks */,
@@ -58,10 +76,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A2593EC14F6811800A3D43A /* MSSCommunicationController */ = {
+			isa = PBXGroup;
+			children = (
+				8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */,
+				8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */,
+				8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */,
+				8A2593F014F6811800A3D43A /* MSSCommunicationController.m */,
+				8A2593FD14F6850500A3D43A /* CodeineStructs.h */,
+				8A2593ED14F6811800A3D43A /* Supporting Files */,
+			);
+			path = MSSCommunicationController;
+			sourceTree = "<group>";
+		};
+		8A2593ED14F6811800A3D43A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A2593EE14F6811800A3D43A /* MSSCommunicationController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8AA24C8A14ED072600D7725C = {
 			isa = PBXGroup;
 			children = (
 				8AA24C9F14ED072700D7725C /* pieMenu */,
+				8A2593EC14F6811800A3D43A /* MSSCommunicationController */,
 				8AA24C9814ED072700D7725C /* Frameworks */,
 				8AA24C9614ED072700D7725C /* Products */,
 			);
@@ -71,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA24C9514ED072700D7725C /* pieMenu.app */,
+				8A2593EA14F6811800A3D43A /* libMSSCommunicationController.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,8 +139,6 @@
 				8ABC211114EE87E900CF5CFB /* pieSliceView.h */,
 				8ABC211214EE87E900CF5CFB /* pieSliceView.m */,
 				8ABC211514EE8CC100CF5CFB /* utils.h */,
-				8A567AAE14F5404800BD2E45 /* GCDAsyncUdpSocket.h */,
-				8A567AAF14F5404800BD2E45 /* GCDAsyncUdpSocket.m */,
 				8AA24CA014ED072700D7725C /* Supporting Files */,
 			);
 			path = pieMenu;
@@ -118,7 +157,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8A2593E814F6811800A3D43A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		8A2593E914F6811800A3D43A /* MSSCommunicationController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A2593F214F6811800A3D43A /* Build configuration list for PBXNativeTarget "MSSCommunicationController" */;
+			buildPhases = (
+				8A2593E614F6811800A3D43A /* Sources */,
+				8A2593E714F6811800A3D43A /* Frameworks */,
+				8A2593E814F6811800A3D43A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSSCommunicationController;
+			productName = MSSCommunicationController;
+			productReference = 8A2593EA14F6811800A3D43A /* libMSSCommunicationController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		8AA24C9414ED072700D7725C /* pieMenu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA24CAD14ED072700D7725C /* Build configuration list for PBXNativeTarget "pieMenu" */;
@@ -158,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				8AA24C9414ED072700D7725C /* pieMenu */,
+				8A2593E914F6811800A3D43A /* MSSCommunicationController */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +242,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A2593E614F6811800A3D43A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2593F514F6826500A3D43A /* GCDAsyncUdpSocket.m in Sources */,
+				8A2593F114F6811800A3D43A /* MSSCommunicationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA24C9114ED072700D7725C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,7 +260,6 @@
 				8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */,
 				8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */,
 				8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */,
-				8A567AB014F5404900BD2E45 /* GCDAsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +277,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A2593F314F6811800A3D43A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MSSCommunicationController.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSCommunicationController/MSSCommunicationController-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8A2593F414F6811800A3D43A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MSSCommunicationController.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSCommunicationController/MSSCommunicationController-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		8AA24CAB14ED072700D7725C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -273,6 +373,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A2593F214F6811800A3D43A /* Build configuration list for PBXNativeTarget "MSSCommunicationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2593F314F6811800A3D43A /* Debug */,
+				8A2593F414F6811800A3D43A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8AA24C8F14ED072600D7725C /* Build configuration list for PBXProject "pieMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

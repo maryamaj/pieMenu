@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "pieMenuViewController.h"
+#import "MSSCommunicationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     pieMenuViewController* _pieController;
+    MSSCommunicationController *_surfaceComController;
     
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) pieMenuViewController* pieController;
+@property (strong, nonatomic) MSSCommunicationController* surfaceComController;
 
 @end
