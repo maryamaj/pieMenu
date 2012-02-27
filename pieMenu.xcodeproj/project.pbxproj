@@ -21,7 +21,10 @@
 		8AA24CA614ED072700D7725C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CA514ED072700D7725C /* main.m */; };
 		8AA24CAA14ED072700D7725C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CA914ED072700D7725C /* AppDelegate.m */; };
 		8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CB114ED079800D7725C /* pieMenuView.m */; };
+		8AA3C51D14FBC76200229735 /* MyPieMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3C51C14FBC76200229735 /* MyPieMenuController.m */; };
 		8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABC211214EE87E900CF5CFB /* pieSliceView.m */; };
+		8AF165F214F7A42B00FD04D4 /* MSSCContactDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */; };
+		8AF165F314F7A42B00FD04D4 /* MSSCContactDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +50,13 @@
 		8AA24CA914ED072700D7725C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8AA24CB014ED079800D7725C /* pieMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieMenuView.h; sourceTree = "<group>"; };
 		8AA24CB114ED079800D7725C /* pieMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuView.m; sourceTree = "<group>"; };
+		8AA3C51B14FBC76200229735 /* MyPieMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPieMenuController.h; sourceTree = "<group>"; };
+		8AA3C51C14FBC76200229735 /* MyPieMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPieMenuController.m; sourceTree = "<group>"; };
 		8ABC211114EE87E900CF5CFB /* pieSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieSliceView.h; sourceTree = "<group>"; };
 		8ABC211214EE87E900CF5CFB /* pieSliceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieSliceView.m; sourceTree = "<group>"; };
 		8ABC211514EE8CC100CF5CFB /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSCContactDescriptor.h; sourceTree = "<group>"; };
+		8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSCContactDescriptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,8 @@
 				8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */,
 				8A2593F014F6811800A3D43A /* MSSCommunicationController.m */,
 				8A2593FD14F6850500A3D43A /* CodeineStructs.h */,
+				8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */,
+				8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */,
 				8A2593ED14F6811800A3D43A /* Supporting Files */,
 			);
 			path = MSSCommunicationController;
@@ -132,6 +141,8 @@
 			children = (
 				8AA24CA814ED072700D7725C /* AppDelegate.h */,
 				8AA24CA914ED072700D7725C /* AppDelegate.m */,
+				8AA3C51B14FBC76200229735 /* MyPieMenuController.h */,
+				8AA3C51C14FBC76200229735 /* MyPieMenuController.m */,
 				8A567AAB14F53CA300BD2E45 /* pieMenuViewController.h */,
 				8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */,
 				8AA24CB014ED079800D7725C /* pieMenuView.h */,
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */,
+				8AF165F214F7A42B00FD04D4 /* MSSCContactDescriptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +260,7 @@
 			files = (
 				8A2593F514F6826500A3D43A /* GCDAsyncUdpSocket.m in Sources */,
 				8A2593F114F6811800A3D43A /* MSSCommunicationController.m in Sources */,
+				8AF165F314F7A42B00FD04D4 /* MSSCContactDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +273,7 @@
 				8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */,
 				8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */,
 				8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */,
+				8AA3C51D14FBC76200229735 /* MyPieMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +394,7 @@
 				8A2593F414F6811800A3D43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AA24C8F14ED072600D7725C /* Build configuration list for PBXProject "pieMenu" */ = {
 			isa = XCConfigurationList;

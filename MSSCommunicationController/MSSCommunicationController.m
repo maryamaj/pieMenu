@@ -7,8 +7,14 @@
 //
 
 #import "MSSCommunicationController.h"
+#import "MSSCContactDescriptor.h"
+
 
 @implementation MSSCommunicationController
+
+@synthesize contactDictionary = _contacDescriptorsDictionaty;
+@synthesize delegate = _delegate;
+
 
 + (id) sharedController
 {
@@ -28,7 +34,6 @@
     if(self){
         
         udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-        
     }
     
     return self;
@@ -83,6 +88,30 @@
     
     NSLog(@"Number of descriptors: %d", pcd->count);
     
+    NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
+    
+    for(int i = 0; i < pcd->count; i++){
+    
+        MSSCContactDescriptor* d =[MSSCContactDescriptor descriptorFromStruct:pcd->descArray[i]];
+        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.byteValue]];
+        
+    }
+    
+    free(pcd->descArray);
+    free(pcd);
+    
+    self.contactDictionary = dictionary;
+    
+    if([_delegate conformsToProtocol:@protocol(MSSCommunicationProtocol)]){
+    
+    
+        [_delegate newContacs:self.contactDictionary];
+    }
+}
+
+-(void)dealloc{
+    
+    self.contactDictionary = nil;
 }
 
 

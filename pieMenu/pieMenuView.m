@@ -26,6 +26,9 @@
 - (id)initWithFrame:(CGRect)frame andSlices:(int) numSlices
 {
     self = [super initWithFrame:frame];
+    
+    _numSlices = numSlices;
+    
     if (self) {
         _degrees = 1.0*(180/slicesPerEmiClicle(numSlices));
         CGFloat sliceHeight = frame.size.height/2 *  sin(degreesToRadians(_degrees));
@@ -48,6 +51,22 @@
     }
     
     return self;
+}
+
+- (void) highlightSlice:(int) sliceNumber withColor:(UIColor *) color{
+
+    if(sliceNumber >= 0 && sliceNumber < _numSlices){
+    
+        pieSliceView* slice = [_slices objectAtIndex:sliceNumber];
+        [slice changeColor:color];
+    }
+
+}
+
+- (void) dehighlightSlice:(int) sliceNumber{
+
+    [self highlightSlice:sliceNumber withColor:[pieSliceView defaultColor]];
+
 }
 
      

@@ -18,6 +18,7 @@
 }
 
 + (pieSliceView *) sliceWithFrame:(CGRect) frame angle:(CGFloat) angle;
++ (UIColor *) defaultColor;
 -(id) initWithFrame:(CGRect)frame angle:(CGFloat) angle;
 - (void) changeColor:(UIColor *) newColor;
 @end

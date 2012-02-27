@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "pieMenuViewController.h"
+#import "MyPieMenuController.h"
 #import "MSSCommunicationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
-    pieMenuViewController* _pieController;
+    MyPieMenuController* _pieController;
     MSSCommunicationController *_surfaceComController;
     
 }

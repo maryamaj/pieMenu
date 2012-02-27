@@ -9,6 +9,7 @@
 #import "pieMenuViewController.h"
 
 @implementation pieMenuViewController
+@synthesize selectedSlice = _selectedSlice;
 
 - (id) initWithSlices:(int) slices
 {
@@ -18,6 +19,7 @@
     if(self){
     
         _slices = slices;
+        _selectedSlice = -1;
             
     }
     
@@ -63,6 +65,19 @@
     [super viewDidLoad];
 }
 */
+-(void) selectSlice:(int) sliceNumber{
+
+    [(pieMenuView *)self.view highlightSlice:sliceNumbe withColor:[UIColor greenColor]];
+    _selectedSlice = sliceNumber;
+    
+
+}
+
+-(void) deseletSlice:(int) sliceNumber{
+
+    [(pieMenuView *)self.view dehighlightSlice:sliceNumber];
+
+}
 
 - (void)viewDidUnload
 {

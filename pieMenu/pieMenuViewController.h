@@ -12,9 +12,14 @@
 @interface pieMenuViewController : UIViewController
 {
     int _slices;
+    int _selectedSlice;
 
 }
 
+@property (nonatomic) int selectedSlice;
+
 - (id) initWithSlices:(int) slices;
+-(void) selectSlice:(int) sliceNumber;
+-(void) deseletSlice:(int) sliceNumber;
 
 @end

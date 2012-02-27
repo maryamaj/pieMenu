@@ -12,6 +12,11 @@
 
 @implementation pieSliceView
 
++ (UIColor *) defaultColor {
+
+    return [UIColor yellowColor];
+}
+
 + (pieSliceView *) sliceWithFrame:(CGRect) frame angle:(CGFloat) angle
 {
     pieSliceView* newSlice = [[pieSliceView alloc] initWithFrame:frame angle:angle];
@@ -35,7 +40,7 @@
         
         _angle = angle;
         _lineWidth = 5.0;
-        _color = [[UIColor yellowColor] CGColor];
+        _color = [[pieSliceView defaultColor] CGColor];
     
     }
     

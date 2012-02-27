@@ -21,8 +21,11 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.pieController = [[pieMenuViewController alloc] initWithSlices:6];
+    self.pieController = [[MyPieMenuController alloc] initWithSlices:6];
+    _pieController.byteValue = 192;
     self.surfaceComController = [MSSCommunicationController sharedController];
+    
+    _surfaceComController.delegate = _pieController;
     [_surfaceComController connectToHost:@"129.16.213.195" onPort:4568];
     [_surfaceComController handshake];
     

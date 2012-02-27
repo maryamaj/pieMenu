@@ -10,12 +10,27 @@
 #import "GCDAsyncUdpSocket.h"
 #import "CodeineStructs.h"
 
+
+@protocol MSSCommunicationProtocol <NSObject>
+
+@required
+
+-(void) newContacs:(NSDictionary *) contacDictionary;
+
+@end
+
+
 @interface MSSCommunicationController : NSObject <GCDAsyncUdpSocketDelegate>
 {
     
     GCDAsyncUdpSocket *udpSocket;
+    NSMutableDictionary *_contacDescriptorsDictionaty;
+    __weak id <MSSCommunicationProtocol> _delegate;
     
 }
+
+@property (strong, atomic) NSMutableDictionary* contactDictionary;
+@property (weak, nonatomic) id <MSSCommunicationProtocol> delegate;
 
 + (id)sharedController;
 - (MSSCommunicationController *) init;
