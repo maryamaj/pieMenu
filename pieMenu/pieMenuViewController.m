@@ -67,7 +67,7 @@
 */
 -(void) selectSlice:(int) sliceNumber{
 
-    [(pieMenuView *)self.view highlightSlice:sliceNumbe withColor:[UIColor greenColor]];
+    [(pieMenuView *)self.view highlightSlice:sliceNumber withColor:[UIColor greenColor]];
     _selectedSlice = sliceNumber;
     
 

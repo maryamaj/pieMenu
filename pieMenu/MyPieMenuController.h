@@ -25,5 +25,6 @@
 @property (strong, nonatomic) MSSCContactDescriptor *menuDevice;
 
 -(float) dotProd:(CGPoint)v1 v2:(CGPoint) v2;
+-(void) triggerWithDescriptor:(MSSCContactDescriptor *) cDesc;
 
 @end

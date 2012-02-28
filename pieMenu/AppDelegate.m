@@ -27,7 +27,9 @@
     
     _surfaceComController.delegate = _pieController;
     [_surfaceComController connectToHost:@"129.16.213.195" onPort:4568];
-    [_surfaceComController handshake];
+    
+   
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:(_surfaceComController) selector:@selector(handshake) userInfo:nil repeats:YES]; 
     
     [self.window addSubview:self.pieController.view];
     

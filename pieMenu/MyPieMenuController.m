@@ -43,10 +43,10 @@
 
 -(void) triggerWithDescriptor:(MSSCContactDescriptor *) cDesc{
 
-    cDesc.positionX = self.menuDevice.positionX - cDesc.positionX;
-    cDesc.positionY = self.menuDevice.positionY - cDesc.positionY;
+    cDesc.positionX = cDesc.positionX - self.menuDevice.positionX;
+    cDesc.positionY = cDesc.positionY - self.menuDevice.positionY;
     
-    int distance = sqrt(cDesc.positionX*cDesc.positionX + cDesc.positionY*cDesc.positionY);
+    float distance = sqrt(cDesc.positionX*cDesc.positionX + cDesc.positionY*cDesc.positionY);
     
     short quadrant = -1;
     
@@ -64,7 +64,7 @@
     CGPoint normalized = CGPointMake(cDesc.positionX/distance, cDesc.positionY/distance);
     CGPoint versor;
     
-    float angle_d;
+    float angle_r;
     
     switch (quadrant) {
         case 0:
@@ -82,13 +82,15 @@
         case 3:
             versor = CGPointMake(0, -1);
             angle_r = M_PI*3/2 + acos([self dotProd:normalized v2:versor]);
-            break
+            break;
         default:
             break;
     }
     
     float angle_d = radiansToDegrees(angle_r);
-    int slice = ceil(angle_d/degreesPerSlice);
+    int slice = -1;
+    if(angle_d != 0.0)
+         slice = floor(angle_d/degreesPerSlice);
     
     [self deseletSlice:_selectedSlice];
     [self selectSlice:slice];
