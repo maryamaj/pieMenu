@@ -14,8 +14,10 @@
     CGFloat _radius;
     CGFloat _angle;
     CGFloat _lineWidth;
-    CGColorRef _color;
+    UIColor* _color;
 }
+
+@property (strong, atomic) UIColor* color;
 
 + (pieSliceView *) sliceWithFrame:(CGRect) frame angle:(CGFloat) angle;
 + (UIColor *) defaultColor;

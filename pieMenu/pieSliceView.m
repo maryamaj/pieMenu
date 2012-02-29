@@ -12,6 +12,8 @@
 
 @implementation pieSliceView
 
+@synthesize color = _color;
+
 + (UIColor *) defaultColor {
 
     return [UIColor yellowColor];
@@ -40,7 +42,7 @@
         
         _angle = angle;
         _lineWidth = 5.0;
-        _color = [[pieSliceView defaultColor] CGColor];
+        self.color = [pieSliceView defaultColor];
     
     }
     
@@ -52,7 +54,7 @@
 {
     [[UIColor blackColor] setStroke];
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetFillColor(ctx, CGColorGetComponents(_color));
+    CGContextSetFillColorWithColor(ctx, self.color.CGColor);
     
     CGContextFillPath(ctx);
     
@@ -65,8 +67,6 @@
     
     [thePath addArcWithCenter:_center radius:rect.size.width startAngle:M_PI endAngle:M_PI+degreesToRadians(_angle)clockwise:YES];
     
-    //[thePath addLineToPoint:CGPointMake(0, rect.size.height)];
-    //[thePath moveToPoint:_center];
     [thePath closePath];
     //[thePath stroke];
     [thePath fill];
@@ -92,7 +92,7 @@
 
 - (void) changeColor:(UIColor *) newColor {
     
-    _color = [newColor CGColor];
+    self.color = newColor;
     [self setNeedsDisplay];
 
 }

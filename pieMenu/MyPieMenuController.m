@@ -29,6 +29,8 @@
         }
     }
     
+    if([self.cArray count] == 1 && ((MSSCContactDescriptor *)[self.cArray objectAtIndex:0]).byteValue == self.byteValue)
+        [self deseletSlice:_selectedSlice];
     
     for(int i  = 0; i < [self.cArray count]; i++){
     
@@ -37,6 +39,7 @@
             
             [self triggerWithDescriptor:cDesc];
         }
+        
     }
 
 }
@@ -44,7 +47,7 @@
 -(void) triggerWithDescriptor:(MSSCContactDescriptor *) cDesc{
 
     cDesc.positionX = cDesc.positionX - self.menuDevice.positionX;
-    cDesc.positionY = cDesc.positionY - self.menuDevice.positionY;
+    cDesc.positionY = self.menuDevice.positionY - cDesc.positionY;
     
     float distance = sqrt(cDesc.positionX*cDesc.positionX + cDesc.positionY*cDesc.positionY);
     
@@ -92,8 +95,19 @@
     if(angle_d != 0.0)
          slice = floor(angle_d/degreesPerSlice);
     
+    UIColor* color;
+    
+    if(cDesc.orientation > 0.0 && cDesc.orientation < 90.0) 
+        color = [UIColor redColor];
+    if(cDesc.orientation > 90.0 && cDesc.orientation < 180.0)
+         color = [UIColor greenColor];
+    if(cDesc.orientation > 180.0 && cDesc.orientation < 270.0)
+        color = [UIColor blueColor];
+    if(cDesc.orientation > 270.0 && cDesc.orientation < 360.0)
+        color = [UIColor orangeColor];
+    
     [self deseletSlice:_selectedSlice];
-    [self selectSlice:slice];
+    [self selectSlice:slice withColor:color];
     
 }
 

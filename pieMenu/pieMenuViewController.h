@@ -20,6 +20,7 @@
 
 - (id) initWithSlices:(int) slices;
 -(void) selectSlice:(int) sliceNumber;
+-(void) selectSlice:(int)sliceNumber withColor:(UIColor *) color;
 -(void) deseletSlice:(int) sliceNumber;
 
 @end
