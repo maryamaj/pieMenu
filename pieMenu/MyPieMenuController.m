@@ -46,64 +46,22 @@
 
 -(void) triggerWithDescriptor:(MSSCContactDescriptor *) cDesc{
 
-    cDesc.positionX = cDesc.positionX - self.menuDevice.positionX;
-    cDesc.positionY = self.menuDevice.positionY - cDesc.positionY;
-    
-    float distance = sqrt(cDesc.positionX*cDesc.positionX + cDesc.positionY*cDesc.positionY);
-    
-    short quadrant = -1;
-    
-    if( cDesc.positionX > 0 && cDesc.positionY > 0)
-        quadrant = 1;
-    else if( cDesc.positionX > 0 && cDesc.positionY < 0)
-        quadrant = 2;
-    else if( cDesc.positionX < 0 && cDesc.positionY < 0)
-        quadrant = 3;
-    else if( cDesc.positionX < 0 && cDesc.positionY > 0)
-        quadrant = 0;
-    
     float degreesPerSlice = 1.0*(180/slicesPerEmiClicle(_slices));
     
-    CGPoint normalized = CGPointMake(cDesc.positionX/distance, cDesc.positionY/distance);
-    CGPoint versor;
-    
-    float angle_r;
-    
-    switch (quadrant) {
-        case 0:
-            versor = CGPointMake(-1, 0);
-            angle_r = acos([self dotProd:normalized v2:versor]);
-            break;
-        case 1:
-            versor = CGPointMake(0, 1);
-            angle_r = M_PI/2 + acos([self dotProd:normalized v2:versor]);
-            break;
-        case 2:
-            versor = CGPointMake(1, 0);
-            angle_r = M_PI + acos([self dotProd:normalized v2:versor]);
-            break;
-        case 3:
-            versor = CGPointMake(0, -1);
-            angle_r = M_PI*3/2 + acos([self dotProd:normalized v2:versor]);
-            break;
-        default:
-            break;
-    }
-    
-    float angle_d = radiansToDegrees(angle_r);
+    float angle_d = [MSSCContactDescriptor orientationOfDescriptor:cDesc relativeToDescriptor:self.menuDevice];
     int slice = -1;
     if(angle_d != 0.0)
          slice = floor(angle_d/degreesPerSlice);
     
     UIColor* color;
     
-    if(cDesc.orientation > 0.0 && cDesc.orientation < 90.0) 
+    if(angle_d > 0.0 && angle_d < 90.0) 
         color = [UIColor redColor];
-    if(cDesc.orientation > 90.0 && cDesc.orientation < 180.0)
+    if(angle_d > 90.0 && angle_d < 180.0)
          color = [UIColor greenColor];
-    if(cDesc.orientation > 180.0 && cDesc.orientation < 270.0)
+    if(angle_d > 180.0 && angle_d < 270.0)
         color = [UIColor blueColor];
-    if(cDesc.orientation > 270.0 && cDesc.orientation < 360.0)
+    if(angle_d > 270.0 && angle_d < 360.0)
         color = [UIColor orangeColor];
     
     [self deseletSlice:_selectedSlice];
