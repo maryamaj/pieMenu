@@ -26,7 +26,7 @@
     self.surfaceComController = [MSSCommunicationController sharedController];
     
     _surfaceComController.delegate = _pieController;
-    [_surfaceComController connectToHost:@"129.16.202.46" onPort:4568];
+    [_surfaceComController connectToHost:@"129.16.195.183" onPort:4568];
     
    
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:(_surfaceComController) selector:@selector(handshake) userInfo:nil repeats:YES]; 

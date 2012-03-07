@@ -20,15 +20,8 @@
     
     self.cArray = [NSMutableArray arrayWithArray:[contacDictionary allValues]];
     
-    for(int i  = 0; i < [self.cArray count]; i++){
-    
-        MSSCContactDescriptor  *cDesc = [self.cArray objectAtIndex:i];
-        if(cDesc.byteValue == self.byteValue){
-        
-            self.menuDevice = cDesc;
-        }
-    }
-    
+    self.menuDevice = (MSSCContactDescriptor *)[contacDictionary objectForKey:[NSNumber numberWithUnsignedChar:0x00]];
+
     if([self.cArray count] == 1 && ((MSSCContactDescriptor *)[self.cArray objectAtIndex:0]).byteValue == self.byteValue)
         [self deseletSlice:_selectedSlice];
     

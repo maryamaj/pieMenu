@@ -48,7 +48,7 @@
     
 }
 
-#pragma mark --
+#pragma mark -
 #pragma mark Class Utility Methods
 
 +(float) distanceFromDescriptor:(MSSCContactDescriptor*) a toDescriptor:(MSSCContactDescriptor *) b{    
