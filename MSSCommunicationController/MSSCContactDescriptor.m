@@ -24,6 +24,53 @@
 
 }
 
++(MSSCContactDescriptor *) descriptorFromData:(NSData *) data{
+
+    const unsigned char* bytes = [data bytes];
+    
+    unsigned char byteValue = bytes[0];
+    
+    int pos = 1;
+    
+    int positionX = *(&bytes[pos]);
+    pos = pos+sizeof(int);
+    
+    int positionY = *(&bytes[pos]);
+    pos = pos + sizeof(int);
+    
+    int orient = *(&bytes[pos]);
+    
+    MSSCContactDescriptor* cd = [MSSCContactDescriptor descriptorWithByteValue:byteValue positionX:positionX positionY:positionY orientation:orient/10.0f];
+    
+    return cd;
+    
+}
+
+-(NSData *) data {
+
+    NSData* data = nil;
+    
+    unsigned char *bytes = malloc(1*sizeof(unsigned char)+3*sizeof(int));
+    if(bytes){
+        
+        bytes[0] = self.byteValue;
+        
+        int pos = 1;
+        memcpy(&(bytes[pos]), &(_positionX), sizeof(int));
+        pos = pos+sizeof(int);
+        memcpy(&(bytes[pos]), &(_positionY), sizeof(int));
+        pos = pos + sizeof(int);
+        int orient = _orientation * 10;
+        memcpy(&(bytes[pos]), &(orient), sizeof(int));
+        
+        data = [NSData dataWithBytes:bytes length:(1+3*sizeof(int))];
+        
+        free(bytes);
+    }
+    
+    return data;
+}
+
 + (MSSCContactDescriptor *) descriptorWithByteValue:(unsigned char) byteValue positionX:(int) posX positionY:(int)posY orientation:(float) angle{
     
     MSSCContactDescriptor* msscd = [[MSSCContactDescriptor alloc] initWithByteValue:byteValue positionX:posX positionY:posY orientation:angle]; 

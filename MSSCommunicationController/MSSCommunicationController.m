@@ -8,6 +8,8 @@
 
 #import "MSSCommunicationController.h"
 #import "MSSCContactDescriptor.h"
+#import <ifaddrs.h>
+#import <arpa/inet.h>
 
 
 @implementation MSSCommunicationController
@@ -54,33 +56,50 @@
     [udpSocket sendData:data withTimeout:-1 tag:0];
 }
 
--(void) handshake{
+-(void) getContacsFromCodeineServer{
     
     NSData* data;
     NSError* error = nil;
     
-    NSString* handshake = [NSString stringWithFormat:@"GET"];
-    data = [handshake dataUsingEncoding:NSASCIIStringEncoding];
+    CodeineMessageContacts*  cmC = [CodeineMessageContacts messageOfTypeGet];
     
-    [self sendData:data];
+    data = [cmC data];
+    [self sendData: data];
     [udpSocket beginReceiving:&error];
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
     
-    PackedContactDescriptors *pcd;
+    CodeineMessage* cM;
     
-    pcd = malloc(sizeof(PackedContactDescriptors));
+    cM = [CodeineMessage messageFromData:data];
     
-    char* bytes =(char *) [data bytes];
+    if(cM.msgType == kMSGContacts){
+        if(cM.subType == kMSGSetContacts){
+        
+            
+            //[self hasContactData:];
+        }
+    }
     
-    pcd->count = bytes[0];
+    if (cM.msgType == kMSGIPs) {
+        if(cM.subType == kMSGSetIPs){
+        
+            //[self hasIPData:];
+        }
+    }
     
-    pcd->descArray = malloc(pcd->count * sizeof(ContactDescriptor));
-    memcpy(pcd->descArray, (bytes+sizeof(char)), pcd->count*sizeof(ContactDescriptor));
     
-    [self hasData:pcd];
     
+    
+}
+
+-(void) hasContactData:(PackedContactDescriptors *)pcd {
+
+}
+
+-(void) hasIPData:(PackedDeviceInformations *)pdi {
+
 }
 
 -(void) hasData:(PackedContactDescriptors *) pcd{
@@ -109,10 +128,37 @@
     }
 }
 
--(void)dealloc{
+#pragma mark -
+#pragma mark Class Utilities
+
++ (NSString *) deviceIp{
     
-    self.contactDictionary = nil;
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0){
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL){
+            if(temp_addr->ifa_addr->sa_family == AF_INET){
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]){
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    return address;
 }
-
-
 @end

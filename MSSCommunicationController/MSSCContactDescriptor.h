@@ -27,15 +27,16 @@
 @property (atomic) int positionY;
 @property (atomic) float orientation;
 
-+(MSSCContactDescriptor *) descriptorFromStruct:(ContactDescriptor) cd;
+
 +(MSSCContactDescriptor *) descriptorWithByteValue:(unsigned char) byteValue positionX:(int) posX positionY:(int)posY orientation:(float) angle;
++(MSSCContactDescriptor *) descriptorFromData:(NSData *) data;
 +(float) distanceFromDescriptor:(MSSCContactDescriptor*) a toDescriptor:(MSSCContactDescriptor *) b;
 +(CGPoint) positionOfDescriptor:(MSSCContactDescriptor *) desc relativeToDescriptor:(MSSCContactDescriptor *) origin;
 +(float) orientationOfDescriptor:(MSSCContactDescriptor *) desc relativeToDescriptor:(MSSCContactDescriptor *) origin;
 +(float) dotProd:(CGPoint)v1 v2:(CGPoint) v2;
 
 -(MSSCContactDescriptor *) initWithByteValue:(unsigned char) byteValue positionX:(int) posX positionY:(int)posY orientation:(float) angle;
-
+-(NSData *) data;
 
 @end
 

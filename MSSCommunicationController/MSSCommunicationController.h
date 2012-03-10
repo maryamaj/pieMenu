@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GCDAsyncUdpSocket.h"
-#import "CodeineStructs.h"
+#import "CodeineMessageContacts.h"
+#import "CodeineMessageIPs.h"
 
 
 @protocol MSSCommunicationProtocol <NSObject>
@@ -16,6 +17,10 @@
 @required
 
 -(void) newContacs:(NSDictionary *) contacDictionary;
+
+@optional
+
+-(void) newIPs:(NSDictionary *) ipDictionary;
 
 @end
 
@@ -32,11 +37,14 @@
 @property (strong, atomic) NSMutableDictionary* contactDictionary;
 @property (weak, nonatomic) id <MSSCommunicationProtocol> delegate;
 
-+ (id)sharedController;
-- (MSSCommunicationController *) init;
--(void) hasData:(PackedContactDescriptors *) pcd;
++(id)sharedController;
++(NSString *) deviceIP;
+-(MSSCommunicationController *) init;
+-(void) hasContactData:(PackedContactDescriptors *) pcd;
+-(void) hasIPData:(PackedDeviceInformations *) pdi;
 -(void) connectToHost:(NSString *)host onPort:(uint16_t) port;
 -(void) sendData:(NSData *) data;
--(void) handshake;
+-(void) getContacsFromCodeineServer;
+-(void) setIpToCodeineServer;
 
 @end

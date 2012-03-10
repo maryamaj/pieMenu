@@ -16,6 +16,10 @@
 		8A59C42F1503A5FD008ED71F /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A59C42D1503A5FD008ED71F /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A59C4301503A5FD008ED71F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C42E1503A5FD008ED71F /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8A59C43C1503AB80008ED71F /* MSSCommunicationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A791ABD150B900800B2E226 /* DeviceInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A791ABB150B900800B2E226 /* DeviceInformation.h */; };
+		8A791ABE150B900800B2E226 /* DeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A791ABC150B900800B2E226 /* DeviceInformation.m */; };
+		8A791AC2150BA66600B2E226 /* PackedDeviceInformations.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A791AC0150BA66600B2E226 /* PackedDeviceInformations.h */; };
+		8A791AC3150BA66600B2E226 /* PackedDeviceInformations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A791AC1150BA66600B2E226 /* PackedDeviceInformations.m */; };
 		8AA24C9A14ED072700D7725C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9914ED072700D7725C /* UIKit.framework */; };
 		8AA24C9C14ED072700D7725C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9B14ED072700D7725C /* Foundation.framework */; };
 		8AA24C9E14ED072700D7725C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9D14ED072700D7725C /* CoreGraphics.framework */; };
@@ -25,8 +29,16 @@
 		8AA24CB214ED079800D7725C /* pieMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA24CB114ED079800D7725C /* pieMenuView.m */; };
 		8AA3C51D14FBC76200229735 /* MyPieMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3C51C14FBC76200229735 /* MyPieMenuController.m */; };
 		8ABC211314EE87E900CF5CFB /* pieSliceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABC211214EE87E900CF5CFB /* pieSliceView.m */; };
+		8AC29628150BFE990036A943 /* CodeineMessageIPs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC29626150BFE990036A943 /* CodeineMessageIPs.h */; };
+		8AC29629150BFE990036A943 /* CodeineMessageIPs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC29627150BFE990036A943 /* CodeineMessageIPs.m */; };
+		8AC7DF45150A30DA0050B258 /* CodeineMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC7DF43150A30DA0050B258 /* CodeineMessage.h */; };
+		8AC7DF46150A30DA0050B258 /* CodeineMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC7DF44150A30DA0050B258 /* CodeineMessage.m */; };
 		8AF165F214F7A42B00FD04D4 /* MSSCContactDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AF165F314F7A42B00FD04D4 /* MSSCContactDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */; };
+		8AF6B0EE150BC81D00FE6689 /* PackedContacDescriptors.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF6B0EC150BC81D00FE6689 /* PackedContacDescriptors.h */; };
+		8AF6B0EF150BC81D00FE6689 /* PackedContacDescriptors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF6B0ED150BC81D00FE6689 /* PackedContacDescriptors.m */; };
+		8AF6B0F2150BC85200FE6689 /* CodeineMessageContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF6B0F0150BC85200FE6689 /* CodeineMessageContacts.h */; };
+		8AF6B0F3150BC85200FE6689 /* CodeineMessageContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF6B0F1150BC85200FE6689 /* CodeineMessageContacts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +52,10 @@
 		8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuViewController.m; sourceTree = "<group>"; };
 		8A59C42D1503A5FD008ED71F /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		8A59C42E1503A5FD008ED71F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		8A791ABB150B900800B2E226 /* DeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformation.h; sourceTree = "<group>"; };
+		8A791ABC150B900800B2E226 /* DeviceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInformation.m; sourceTree = "<group>"; };
+		8A791AC0150BA66600B2E226 /* PackedDeviceInformations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedDeviceInformations.h; sourceTree = "<group>"; };
+		8A791AC1150BA66600B2E226 /* PackedDeviceInformations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackedDeviceInformations.m; sourceTree = "<group>"; };
 		8AA24C9514ED072700D7725C /* pieMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pieMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA24C9914ED072700D7725C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8AA24C9B14ED072700D7725C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,8 +73,16 @@
 		8ABC211114EE87E900CF5CFB /* pieSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieSliceView.h; sourceTree = "<group>"; };
 		8ABC211214EE87E900CF5CFB /* pieSliceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieSliceView.m; sourceTree = "<group>"; };
 		8ABC211514EE8CC100CF5CFB /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		8AC29626150BFE990036A943 /* CodeineMessageIPs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeineMessageIPs.h; sourceTree = "<group>"; };
+		8AC29627150BFE990036A943 /* CodeineMessageIPs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeineMessageIPs.m; sourceTree = "<group>"; };
+		8AC7DF43150A30DA0050B258 /* CodeineMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeineMessage.h; sourceTree = "<group>"; };
+		8AC7DF44150A30DA0050B258 /* CodeineMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeineMessage.m; sourceTree = "<group>"; };
 		8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSCContactDescriptor.h; sourceTree = "<group>"; };
 		8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSCContactDescriptor.m; sourceTree = "<group>"; };
+		8AF6B0EC150BC81D00FE6689 /* PackedContacDescriptors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedContacDescriptors.h; sourceTree = "<group>"; };
+		8AF6B0ED150BC81D00FE6689 /* PackedContacDescriptors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackedContacDescriptors.m; sourceTree = "<group>"; };
+		8AF6B0F0150BC85200FE6689 /* CodeineMessageContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeineMessageContacts.h; sourceTree = "<group>"; };
+		8AF6B0F1150BC85200FE6689 /* CodeineMessageContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeineMessageContacts.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +114,23 @@
 			children = (
 				8A59C42D1503A5FD008ED71F /* GCDAsyncUdpSocket.h */,
 				8A59C42E1503A5FD008ED71F /* GCDAsyncUdpSocket.m */,
-				8A2593F014F6811800A3D43A /* MSSCommunicationController.m */,
 				8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */,
-				8A2593FD14F6850500A3D43A /* CodeineStructs.h */,
+				8A2593F014F6811800A3D43A /* MSSCommunicationController.m */,
 				8AF165F014F7A42B00FD04D4 /* MSSCContactDescriptor.h */,
 				8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */,
+				8AF6B0EC150BC81D00FE6689 /* PackedContacDescriptors.h */,
+				8AF6B0ED150BC81D00FE6689 /* PackedContacDescriptors.m */,
+				8A2593FD14F6850500A3D43A /* CodeineStructs.h */,
+				8AC7DF43150A30DA0050B258 /* CodeineMessage.h */,
+				8AC7DF44150A30DA0050B258 /* CodeineMessage.m */,
+				8AC29626150BFE990036A943 /* CodeineMessageIPs.h */,
+				8AC29627150BFE990036A943 /* CodeineMessageIPs.m */,
+				8AF6B0F0150BC85200FE6689 /* CodeineMessageContacts.h */,
+				8AF6B0F1150BC85200FE6689 /* CodeineMessageContacts.m */,
+				8A791ABB150B900800B2E226 /* DeviceInformation.h */,
+				8A791ABC150B900800B2E226 /* DeviceInformation.m */,
+				8A791AC0150BA66600B2E226 /* PackedDeviceInformations.h */,
+				8A791AC1150BA66600B2E226 /* PackedDeviceInformations.m */,
 				8A2593ED14F6811800A3D43A /* Supporting Files */,
 			);
 			path = MSSCommunicationController;
@@ -179,6 +215,12 @@
 				8A59C43C1503AB80008ED71F /* MSSCommunicationController.h in Headers */,
 				8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */,
 				8A59C42F1503A5FD008ED71F /* GCDAsyncUdpSocket.h in Headers */,
+				8AC7DF45150A30DA0050B258 /* CodeineMessage.h in Headers */,
+				8A791ABD150B900800B2E226 /* DeviceInformation.h in Headers */,
+				8A791AC2150BA66600B2E226 /* PackedDeviceInformations.h in Headers */,
+				8AF6B0EE150BC81D00FE6689 /* PackedContacDescriptors.h in Headers */,
+				8AF6B0F2150BC85200FE6689 /* CodeineMessageContacts.h in Headers */,
+				8AC29628150BFE990036A943 /* CodeineMessageIPs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +325,12 @@
 				8A2593F114F6811800A3D43A /* MSSCommunicationController.m in Sources */,
 				8AF165F314F7A42B00FD04D4 /* MSSCContactDescriptor.m in Sources */,
 				8A59C4301503A5FD008ED71F /* GCDAsyncUdpSocket.m in Sources */,
+				8AC7DF46150A30DA0050B258 /* CodeineMessage.m in Sources */,
+				8A791ABE150B900800B2E226 /* DeviceInformation.m in Sources */,
+				8A791AC3150BA66600B2E226 /* PackedDeviceInformations.m in Sources */,
+				8AF6B0EF150BC81D00FE6689 /* PackedContacDescriptors.m in Sources */,
+				8AF6B0F3150BC85200FE6689 /* CodeineMessageContacts.m in Sources */,
+				8AC29629150BFE990036A943 /* CodeineMessageIPs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
