@@ -25,13 +25,13 @@
     
 }
 
--(id) initMessageOfTypeSetWithPCD:(PackedDeviceInformations *)pdi {
+-(id) initMessageOfTypeSetWithPDI:(PackedDeviceInformations *) pdi{
     
     
     self = [super initWithType:kMSGIPs andSubType:kMSGSetIPs];
     if(self){
         
-        self.pdi = pdi; 
+        _pdi = pdi; 
     }
     
     return  self;
@@ -42,22 +42,29 @@
     return [[CodeineMessageIPs alloc] initMessageOfTypeGet];
 }
 
-+(CodeineMessageIPs *) messageOfTypeSetWithPCD:(PackedDeviceInformations *)pdi {
++(CodeineMessageIPs *) messageOfTypeSetWithPDI:(PackedDeviceInformations *) pdi{
     
     return [[CodeineMessageIPs alloc] initMessageOfTypeSetWithPDI:pdi];
 }
 
 +(CodeineMessageIPs *) messageFromData:(NSData *)data{
     
-    CodeineMessageIPs* cmIPs =(CodeineMessageIPs *) [super messageFromData:data];
+    CodeineMessageIPs* cmIPs;
     
     const unsigned char* bytes = [data bytes];
     
-    int pos = 2*sizeof(unsigned char);
-    NSData* pdiData = [NSData dataWithBytes:&(bytes[pos]) length:data.length];
+    if(bytes[1] == kMSGGetIPs){
     
-    PackedDeviceInformations* pdi = [PackedDeviceInformations packedDeviceInformationsFromData:pdiData];
-    cmIPs.pdi = pdi;
+        cmIPs = [CodeineMessageIPs messageOfTypeGet];
+    }
+    else if(bytes[1] == kMSGSetIPs){
+        
+        int pos = 2*sizeof(unsigned char);
+        NSData* pdiData = [NSData dataWithBytes:&(bytes[pos]) length:data.length];
+        
+        PackedDeviceInformations* pdi = [PackedDeviceInformations packedDeviceInformationsFromData:pdiData];
+        cmIPs = [CodeineMessageIPs messageOfTypeSetWithPDI:pdi];
+    }
     
     return cmIPs;
     

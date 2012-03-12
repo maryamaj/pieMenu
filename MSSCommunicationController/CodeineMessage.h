@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum _MSGSET { kMSGSetContacts, kMSGSetIPs} _t_CMSGSET;
-typedef enum _MSGGET { kMSGGetContacts, kMSGGetIPs } _t_CMSGGET;
+typedef enum _MSGSUBTYPE { kMSGSetContacts, kMSGSetIPs, kMSGGetContacts, kMSGGetIPs} _t_CMSGSUBTYPE;
 typedef enum _MSG { kMSGContacts, kMSGIPs } _t_CMSG;
 
 @interface CodeineMessage : NSObject

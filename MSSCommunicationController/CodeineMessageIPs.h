@@ -20,7 +20,7 @@
 +(CodeineMessageIPs *) messageOfTypeSetWithPDI:(PackedDeviceInformations *) pdi;
 +(CodeineMessageIPs *) messageFromData:(NSData *) data;
 -(id) initMessageOfTypeGet;
--(id) initMessageOfTypeSetWithPDI:(PackedDeviceInformations *) pcd;
+-(id) initMessageOfTypeSetWithPDI:(PackedDeviceInformations *) pdi;
 -(NSData*) data;
 
 @end

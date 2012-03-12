@@ -30,21 +30,23 @@
     
     GCDAsyncUdpSocket *udpSocket;
     NSMutableDictionary *_contacDescriptorsDictionaty;
+    NSMutableDictionary *_deviceInformationsDictionary;
     __weak id <MSSCommunicationProtocol> _delegate;
     
 }
 
 @property (strong, atomic) NSMutableDictionary* contactDictionary;
+@property (strong, atomic) NSMutableDictionary* deviceDictionary;
 @property (weak, nonatomic) id <MSSCommunicationProtocol> delegate;
 
 +(id)sharedController;
-+(NSString *) deviceIP;
++ (NSString *) deviceIp;
 -(MSSCommunicationController *) init;
--(void) hasContactData:(PackedContactDescriptors *) pcd;
+-(void) hasContactData:(PackedContacDescriptors *) pcd;
 -(void) hasIPData:(PackedDeviceInformations *) pdi;
 -(void) connectToHost:(NSString *)host onPort:(uint16_t) port;
 -(void) sendData:(NSData *) data;
--(void) getContacsFromCodeineServer;
--(void) setIpToCodeineServer;
+-(void) getContacsFromCodeine;
+-(void) setDeviceToCodeine:(DeviceInformation *) thisDeviceInformation;
 
 @end

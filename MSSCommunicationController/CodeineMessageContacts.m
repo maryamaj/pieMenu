@@ -30,7 +30,7 @@
     self = [super initWithType:kMSGContacts andSubType:kMSGSetContacts];
     if(self){
     
-        self.pcd = pcd; 
+        _pcd = pcd; 
     }
 
     return  self;
@@ -48,16 +48,24 @@
 
 +(CodeineMessageContacts *) messageFromData:(NSData *)data{
 
-    CodeineMessageContacts* cmC =(CodeineMessageContacts *) [super messageFromData:data];
-
+    CodeineMessageContacts* cmC;
+    
     const unsigned char* bytes = [data bytes];
     
-    int pos = 2*sizeof(unsigned char);
-    NSData* pcdData = [NSData dataWithBytes:&(bytes[pos]) length:data.length];
+    if(bytes[1] == kMSGGetContacts){
     
-    PackedContacDescriptors* pcd = [PackedContacDescriptors packedContactDescriptorsFromData:pcdData];
-    cmC.pcd = pcd;
+        cmC = [CodeineMessageContacts messageOfTypeGet];
+    }
+    else if(bytes[1] == kMSGSetContacts){
+        
+
+        int pos = 2*sizeof(unsigned char);
+        NSData* pcdData = [NSData dataWithBytes:&(bytes[pos]) length:data.length];
+        
+        PackedContacDescriptors* pcd = [PackedContacDescriptors packedContactDescriptorsFromData:pcdData];
+        cmC = [CodeineMessageContacts messageOfTypeSetWithPCD:pcd];
     
+    }
     return cmC;
     
 }

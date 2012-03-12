@@ -15,6 +15,7 @@
 @implementation MSSCommunicationController
 
 @synthesize contactDictionary = _contacDescriptorsDictionaty;
+@synthesize deviceDictionary = _deviceInformationsDictionary;
 @synthesize delegate = _delegate;
 
 
@@ -56,7 +57,7 @@
     [udpSocket sendData:data withTimeout:-1 tag:0];
 }
 
--(void) getContacsFromCodeineServer{
+-(void) getContacsFromCodeine{
     
     NSData* data;
     NSError* error = nil;
@@ -68,6 +69,23 @@
     [udpSocket beginReceiving:&error];
 }
 
+-(void) setDeviceToCodeine:(DeviceInformation *)thisDeviceInformation{
+
+    NSData* data;
+    NSError* error = nil;
+    
+    NSArray* array = [NSArray arrayWithObject:thisDeviceInformation];
+    
+    PackedDeviceInformations* pdi = [PackedDeviceInformations packedDeviceInformationsWithDIArray:array];
+    
+    CodeineMessageIPs*  cmIPs = [CodeineMessageIPs messageOfTypeSetWithPDI:pdi];
+    
+    data = [cmIPs data];
+    [self sendData:data];
+    [udpSocket beginReceiving:&error];
+
+}
+
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
     
     CodeineMessage* cM;
@@ -77,15 +95,17 @@
     if(cM.msgType == kMSGContacts){
         if(cM.subType == kMSGSetContacts){
         
+            CodeineMessageContacts* cMC = [CodeineMessageContacts messageFromData:data];
             
-            //[self hasContactData:];
+            [self hasContactData:cMC.pcd];
         }
     }
     
     if (cM.msgType == kMSGIPs) {
         if(cM.subType == kMSGSetIPs){
         
-            //[self hasIPData:];
+            CodeineMessageIPs* cMIPs = [CodeineMessageIPs messageFromData:data];
+            [self hasIPData:cMIPs.pdi];
         }
     }
     
@@ -94,39 +114,46 @@
     
 }
 
--(void) hasContactData:(PackedContactDescriptors *)pcd {
+-(void) hasContactData:(PackedContacDescriptors *)pcd {
+
+    NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
+    for (int i; i< pcd.count; i++) {
+        
+        MSSCContactDescriptor* d = [pcd.contacs objectAtIndex:i];
+        
+        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.byteValue]];
+    }
+    
+    self.contactDictionary = dictionary;
+    
+    if([_delegate conformsToProtocol:@protocol(MSSCommunicationProtocol)]){
+        
+        
+        [_delegate newContacs:self.contactDictionary];
+    }
 
 }
 
 -(void) hasIPData:(PackedDeviceInformations *)pdi {
 
-}
-
--(void) hasData:(PackedContactDescriptors *) pcd{
-
-    
-    NSLog(@"Number of descriptors: %d", pcd->count);
-    
     NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
-    
-    for(int i = 0; i < pcd->count; i++){
-    
-        MSSCContactDescriptor* d =[MSSCContactDescriptor descriptorFromStruct:pcd->descArray[i]];
-        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.byteValue]];
+    for (int i; i< pdi.count; i++) {
         
+        MSSCContactDescriptor* d = [pdi.devices objectAtIndex:i];
+        
+        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.byteValue]];
     }
     
-    free(pcd->descArray);
-    free(pcd);
-    
-    self.contactDictionary = dictionary;
+    self.deviceDictionary = dictionary;
     
     if([_delegate conformsToProtocol:@protocol(MSSCommunicationProtocol)]){
-    
-    
-        [_delegate newContacs:self.contactDictionary];
+        
+        
+        [_delegate newIPs:self.deviceDictionary];
     }
+
 }
+
 
 #pragma mark -
 #pragma mark Class Utilities

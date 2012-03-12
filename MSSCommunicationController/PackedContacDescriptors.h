@@ -22,5 +22,6 @@
 +(PackedContacDescriptors *) packedContactDescriptorsWithCDArray:(NSArray *) contacDescriptorsArray;
 +(PackedContacDescriptors *) packedContactDescriptorsFromData:(NSData *) data;
 -(NSData *) data;
+-(int) size;
 
 @end

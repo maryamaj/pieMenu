@@ -72,4 +72,10 @@
     
 }
 
+-(int) size{
+    
+    return ((self.count*[MSSCContactDescriptor size]) + 1);
+
+}
+
 @end

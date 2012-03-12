@@ -15,14 +15,6 @@
 @synthesize positionY = _positionY;
 @synthesize orientation = _orientation;
 
-+(MSSCContactDescriptor *) descriptorFromStruct:(ContactDescriptor) cd
-{
- 
-    MSSCContactDescriptor* msscd = [[MSSCContactDescriptor alloc] initWithByteValue:cd.byteValue positionX:cd.positionX positionY:cd.positionY orientation:cd.orientation/10.0f];
-    
-    return msscd;
-
-}
 
 +(MSSCContactDescriptor *) descriptorFromData:(NSData *) data{
 
@@ -97,6 +89,12 @@
 
 #pragma mark -
 #pragma mark Class Utility Methods
+
++(int) size {
+
+    return sizeof(unsigned char)+3*sizeof(int);
+}
+
 
 +(float) distanceFromDescriptor:(MSSCContactDescriptor*) a toDescriptor:(MSSCContactDescriptor *) b{    
     

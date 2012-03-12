@@ -22,14 +22,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.pieController = [[MyPieMenuController alloc] initWithSlices:6];
-    _pieController.byteValue = 192;
+    _pieController.byteValue = 0;
     self.surfaceComController = [MSSCommunicationController sharedController];
     
     _surfaceComController.delegate = _pieController;
     [_surfaceComController connectToHost:@"129.16.213.195" onPort:4568];
     
    
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:(_surfaceComController) selector:@selector(handshake) userInfo:nil repeats:YES]; 
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:(_surfaceComController) selector:@selector(getContacsFromCodeine) userInfo:nil repeats:YES]; 
     
     [self.window addSubview:self.pieController.view];
     
