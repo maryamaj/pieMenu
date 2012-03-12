@@ -69,6 +69,19 @@
     [udpSocket beginReceiving:&error];
 }
 
+-(void) getDevicesFromCodeine{
+    
+    NSData* data;
+    NSError* error = nil;
+    
+    CodeineMessageIPs*  cmIPs = [CodeineMessageIPs messageOfTypeGet];
+    
+    data = [cmIPs data];
+    [self sendData: data];
+    [udpSocket beginReceiving:&error];
+
+}
+
 -(void) setDeviceToCodeine:(DeviceInformation *)thisDeviceInformation{
 
     NSData* data;

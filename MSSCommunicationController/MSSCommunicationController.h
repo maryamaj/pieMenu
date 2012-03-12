@@ -47,6 +47,7 @@
 -(void) connectToHost:(NSString *)host onPort:(uint16_t) port;
 -(void) sendData:(NSData *) data;
 -(void) getContacsFromCodeine;
+-(void) getDevicesFromCodeine;
 -(void) setDeviceToCodeine:(DeviceInformation *) thisDeviceInformation;
 
 @end
