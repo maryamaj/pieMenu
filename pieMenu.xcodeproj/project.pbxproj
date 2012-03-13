@@ -10,7 +10,6 @@
 		8A2593EB14F6811800A3D43A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA24C9B14ED072700D7725C /* Foundation.framework */; };
 		8A2593F114F6811800A3D43A /* MSSCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2593F014F6811800A3D43A /* MSSCommunicationController.m */; };
 		8A2593F614F6827500A3D43A /* libMSSCommunicationController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2593EA14F6811800A3D43A /* libMSSCommunicationController.a */; };
-		8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A2593FD14F6850500A3D43A /* CodeineStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A567AA614F4F8D900BD2E45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */; };
 		8A567AAD14F53CA300BD2E45 /* pieMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */; };
 		8A59C42F1503A5FD008ED71F /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A59C42D1503A5FD008ED71F /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,7 +45,6 @@
 		8A2593EE14F6811800A3D43A /* MSSCommunicationController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSSCommunicationController-Prefix.pch"; sourceTree = "<group>"; };
 		8A2593EF14F6811800A3D43A /* MSSCommunicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSCommunicationController.h; sourceTree = "<group>"; };
 		8A2593F014F6811800A3D43A /* MSSCommunicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSCommunicationController.m; sourceTree = "<group>"; };
-		8A2593FD14F6850500A3D43A /* CodeineStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeineStructs.h; sourceTree = "<group>"; };
 		8A567AA514F4F8D900BD2E45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A567AAB14F53CA300BD2E45 /* pieMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieMenuViewController.h; sourceTree = "<group>"; };
 		8A567AAC14F53CA300BD2E45 /* pieMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieMenuViewController.m; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				8AF165F114F7A42B00FD04D4 /* MSSCContactDescriptor.m */,
 				8AF6B0EC150BC81D00FE6689 /* PackedContacDescriptors.h */,
 				8AF6B0ED150BC81D00FE6689 /* PackedContacDescriptors.m */,
-				8A2593FD14F6850500A3D43A /* CodeineStructs.h */,
 				8AC7DF43150A30DA0050B258 /* CodeineMessage.h */,
 				8AC7DF44150A30DA0050B258 /* CodeineMessage.m */,
 				8AC29626150BFE990036A943 /* CodeineMessageIPs.h */,
@@ -213,7 +210,6 @@
 			files = (
 				8AF165F214F7A42B00FD04D4 /* MSSCContactDescriptor.h in Headers */,
 				8A59C43C1503AB80008ED71F /* MSSCommunicationController.h in Headers */,
-				8A2593FE14F6850500A3D43A /* CodeineStructs.h in Headers */,
 				8A59C42F1503A5FD008ED71F /* GCDAsyncUdpSocket.h in Headers */,
 				8AC7DF45150A30DA0050B258 /* CodeineMessage.h in Headers */,
 				8A791ABD150B900800B2E226 /* DeviceInformation.h in Headers */,
@@ -367,7 +363,7 @@
 				DSTROOT = /tmp/MSSCommunicationController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MSSCommunicationController/MSSCommunicationController-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -379,7 +375,7 @@
 				DSTROOT = /tmp/MSSCommunicationController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MSSCommunicationController/MSSCommunicationController-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

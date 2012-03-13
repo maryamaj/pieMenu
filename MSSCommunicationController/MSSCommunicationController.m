@@ -130,7 +130,7 @@
 -(void) hasContactData:(PackedContacDescriptors *)pcd {
 
     NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
-    for (int i; i< pcd.count; i++) {
+    for (int i = 0; i< pcd.count; i++) {
         
         MSSCContactDescriptor* d = [pcd.contacs objectAtIndex:i];
         
@@ -150,11 +150,11 @@
 -(void) hasIPData:(PackedDeviceInformations *)pdi {
 
     NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
-    for (int i; i< pdi.count; i++) {
+    for (int i = 0; i< pdi.count; i++) {
         
-        MSSCContactDescriptor* d = [pdi.devices objectAtIndex:i];
+        DeviceInformation* d = [pdi.devices objectAtIndex:i];
         
-        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.byteValue]];
+        [dictionary setObject:d forKey:[NSNumber numberWithUnsignedChar:d.contactDescriptorByteValue]];
     }
     
     self.deviceDictionary = dictionary;

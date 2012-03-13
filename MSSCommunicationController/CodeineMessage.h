@@ -5,7 +5,8 @@
 //  Created by Tommaso Piazza on 3/9/12.
 //  Copyright (c) 2012 ChalmersTH. All rights reserved.
 //
-
+#ifndef CodeineMessage_h
+#define CodeineMessage_h
 #import <Foundation/Foundation.h>
 
 typedef enum _MSGSUBTYPE { kMSGSetContacts, kMSGSetIPs, kMSGGetContacts, kMSGGetIPs} _t_CMSGSUBTYPE;
@@ -25,3 +26,4 @@ typedef enum _MSG { kMSGContacts, kMSGIPs } _t_CMSG;
 -(NSData *) data;
 
 @end
+#endif
