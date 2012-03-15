@@ -24,13 +24,13 @@
     
     int pos = 1;
     
-    int positionX = *(&bytes[pos]);
+    int positionX = *((int *)&bytes[pos]);
     pos = pos+sizeof(int);
     
-    int positionY = *(&bytes[pos]);
+    int positionY = *((int *)&bytes[pos]);
     pos = pos + sizeof(int);
     
-    int orient = *(&bytes[pos]);
+    int orient = *((int *)&bytes[pos]);
     
     MSSCContactDescriptor* cd = [MSSCContactDescriptor descriptorWithByteValue:byteValue positionX:positionX positionY:positionY orientation:orient/10.0f];
     
@@ -109,8 +109,8 @@
 
 +(CGPoint) positionOfDescriptor:(MSSCContactDescriptor *) desc relativeToDescriptor:(MSSCContactDescriptor *) origin{
 
-    float positionX = origin.positionX - desc.positionX;
-    float positionY = desc.positionY - origin.positionY;
+    float positionX = desc.positionX - origin.positionX;
+    float positionY = origin.positionY - desc.positionY;
     
     return CGPointMake(positionX, positionY);
 

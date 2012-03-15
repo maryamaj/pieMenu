@@ -14,7 +14,7 @@
     PackedContacDescriptors* _pcd;
 }
 
-@property (nonatomic, copy) PackedContacDescriptors* pcd;
+@property (nonatomic, strong) PackedContacDescriptors* pcd;
 
 +(CodeineMessageContacts *) messageOfTypeGet;
 +(CodeineMessageContacts *) messageOfTypeSetWithPCD:(PackedContacDescriptors *) pcd;

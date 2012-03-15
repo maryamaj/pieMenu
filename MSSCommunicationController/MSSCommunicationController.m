@@ -161,8 +161,10 @@
     
     if([_delegate conformsToProtocol:@protocol(MSSCommunicationProtocol)]){
         
-        
-        [_delegate newIPs:self.deviceDictionary];
+        if([_delegate respondsToSelector:@selector(newIPs:)]){
+            
+            [_delegate newIPs:self.deviceDictionary];
+        }
     }
 
 }

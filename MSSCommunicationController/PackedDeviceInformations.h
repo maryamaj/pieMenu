@@ -15,7 +15,7 @@
     unsigned char _count;
 }
 
-@property (nonatomic, copy) NSArray* devices;
+@property (nonatomic, strong) NSArray* devices;
 @property (nonatomic, readonly) unsigned char count;
 
 +(PackedDeviceInformations *) packedDeviceInformationsFromData:(NSData *) data;

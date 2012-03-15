@@ -14,7 +14,7 @@
     PackedDeviceInformations* _pdi;
 }
 
-@property (nonatomic, copy) PackedDeviceInformations* pdi;
+@property (nonatomic, strong) PackedDeviceInformations* pdi;
 
 +(CodeineMessageIPs *) messageOfTypeGet;
 +(CodeineMessageIPs *) messageOfTypeSetWithPDI:(PackedDeviceInformations *) pdi;

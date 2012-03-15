@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, readonly) unsigned char count;
-@property (nonatomic, copy) NSArray* contacs;
+@property (nonatomic, strong) NSArray* contacs;
 
 -(PackedContacDescriptors *) initWithCDArray:(NSArray *) contacDescriptorsArray;
 +(PackedContacDescriptors *) packedContactDescriptorsWithCDArray:(NSArray *) contacDescriptorsArray;

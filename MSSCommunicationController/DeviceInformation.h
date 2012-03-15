@@ -18,7 +18,7 @@
 
 @property (nonatomic, assign) unsigned char contactDescriptorByteValue;
 @property (nonatomic, assign) unsigned char ipStrLength;
-@property (nonatomic, copy) NSString* ipAddr;
+@property (nonatomic, strong) NSString* ipAddr;
 
 +(DeviceInformation *) deviceInfoWithCDByteValue:(unsigned char) contactDescriptorByteValue andIp:(NSString *) ipAddr;
 +(DeviceInformation *) deviceInfoFromData:(NSData *) data;
